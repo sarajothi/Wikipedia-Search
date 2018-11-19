@@ -38,6 +38,7 @@ class WikiSearch extends Component {
                     <form>
                         <div className="row">
                             <div className="col-xs-12 form-group">
+                                <label for="search-box" class="sr-only" >Search Text</label>
                                 <input id="search-box" placeholder="Search Text..."
                                     className="form-control input-lg" autoFocus required />
                             </div>
