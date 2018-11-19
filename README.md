@@ -1,10 +1,9 @@
 # Wikipedia Search App
 
-> Small wikipedia search app in React
+> Simple wikipedia search app in React
 
-## Link to the Demo App
-Click [here](https://abhilashpujari.github.io/react-wiki-search/) is to see the demo
-
+## Demo
+[Demo here](https://abhilashpujari.github.io/react-wiki-search/)
 ## Quick Start
 
 ```bash
