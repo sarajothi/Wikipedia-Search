@@ -14,12 +14,12 @@ class WikiSearch extends Component {
 
     fetchWikiData = (e) => {
         e.preventDefault();
-        this.setState({ loading: true });
-
+        
         let searchQuery = document.getElementById('search-box').value;
         let url = `https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=extracts&origin=*&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=${searchQuery}`;
 
         if (searchQuery) {
+            this.setState({ loading: true });
             axios.get(url)
                 .then((response) => this.setState({ wikiData: response.data.query.pages, loading: false }))
                 .catch((error) => { this.setState({ loading: false }); console.log(error)})
