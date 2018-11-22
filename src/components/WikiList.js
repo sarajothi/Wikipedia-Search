@@ -1,7 +1,7 @@
 import React from 'react';
-import Loader from './Loader.js';
+import Loader from './Loader';
 
-const WikiList = props => {
+const WikiList = (props) => {
     return !props.loading ? (
         <div className="wiki-list">
             {
@@ -19,6 +19,6 @@ const WikiList = props => {
             }
         </div>
     ) : <Loader />
-}
+};
 
 export default WikiList;
