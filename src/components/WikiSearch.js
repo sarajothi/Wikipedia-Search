@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
 import WikiList from './WikiList';
 import axios from 'axios';
+import './WikiSearch.css';
 
 class WikiSearch extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            wikiData: []
+            wikiData: [],
+            loading: false
         };
     }
 
     fetchWikiData = (e) => {
         e.preventDefault();
+        this.setState({ loading: true });
 
         let searchQuery = document.getElementById('search-box').value;
         let url = `https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=extracts&origin=*&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=${searchQuery}`;
 
         if (searchQuery) {
             axios.get(url)
-                .then((response) => this.setState({ wikiData: response.data.query.pages }))
-                .catch((error) => console.log(error))
+                .then((response) => this.setState({ wikiData: response.data.query.pages, loading: false }))
+                .catch((error) => { this.setState({ loading: false }); console.log(error)})
         }
     }
 
@@ -38,7 +41,7 @@ class WikiSearch extends Component {
                     <form>
                         <div className="row">
                             <div className="col-xs-12 form-group">
-                                <label for="search-box" class="sr-only" >Search Text</label>
+                                <label htmlFor="search-box" className="sr-only" >Search Text</label>
                                 <input id="search-box" placeholder="Search Text..."
                                     className="form-control input-lg" autoFocus required />
                             </div>
@@ -66,7 +69,7 @@ class WikiSearch extends Component {
                         </div>
                     </form>
 
-                    <WikiList items={this.state.wikiData} />
+                    <WikiList loading={this.state.loading} items={this.state.wikiData} />
                 </div>
             </div>
         );
