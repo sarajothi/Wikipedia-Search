@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
+
 import axios from 'axios';
 import WikiList from './WikiList';
-import Alert from './Alert';
 import './WikiSearch.css';
 
 class WikiSearch extends Component {
@@ -9,10 +11,7 @@ class WikiSearch extends Component {
         super(props);
         this.state = {
             wikiData: [],
-            loading: false,
-            error: {
-                message: ''
-            }
+            loading: false
         };
 
         this.fetchWikiData = this.fetchWikiData.bind(this);
@@ -28,9 +27,12 @@ class WikiSearch extends Component {
             this.setState({ loading: true });
             axios.get(url)
                 .then((response) => this.setState({ wikiData: response.data.query.pages, loading: false }))
-                .catch((error) => { this.setState({ loading: false, error: { message: error } }); })
+                .catch((error) => { this.setState({ loading: false }); })
         } else {
-            this.setState({ loading: false, error: { message: 'Search Text is required' } });
+            this.setState({ loading: false });
+            toast.error("Search Text is required", {
+                position: toast.POSITION.TOP_CENTER
+            });
         }
     }
 
@@ -38,13 +40,8 @@ class WikiSearch extends Component {
         const { loading, wikiData, error } = this.state;
         return (
             <div className="container">
+                <ToastContainer />
                 <div className="wiki-search-box">
-                    {
-                        error && error.message &&
-                        <Alert type="danger" dismissible >
-                            <strong>{error.message}</strong>
-                        </Alert>
-                    }
                     <div className="form-group">
                         <div className="col-xs-12 text-center">
                             <h3 className="wiki-title">
