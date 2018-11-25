@@ -14,4 +14,5 @@ const Alert = (props) => {
         </div>
     )
 };
+
 export default Alert;
