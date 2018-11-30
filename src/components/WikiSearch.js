@@ -40,7 +40,7 @@ class WikiSearch extends Component {
           <div className="form-group">
             <div className="col-xs-12 text-center">
               <h3 className="wiki-title">
-                Wiki Search Engine
+                Wiki Search App
               </h3>
             </div>
           </div>
