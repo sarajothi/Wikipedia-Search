@@ -33,12 +33,12 @@ class WikiSearch extends Component {
   }
 
   render() {
-    const { loading, wikiData, error } = this.state;
+    const { loading, wikiData } = this.state;
     return (
       <div className="container">
         <div className="wiki-search-box">
-          <div className="form-group">
-            <div className="col-xs-12 text-center">
+          <div className="row form-group">
+            <div className="col-12 text-center">
               <h3 className="wiki-title">
                 Wiki Search App
               </h3>
@@ -47,24 +47,24 @@ class WikiSearch extends Component {
 
           <form onSubmit={this.fetchWikiData}>
             <div className="row">
-              <div className="col-xs-12 form-group">
+              <div className="col-12 form-group">
                 <label htmlFor="search-box" className="sr-only" >Search Text</label>
                 <input id="search-box" placeholder="Search Text..."
                   className="form-control input-lg" required />
               </div>
             </div>
             <div className="row">
-              <div className="col-xs-12 text-center">
+              <div className="col-12 text-center">
                 <div className="row">
                   <div className="col-xs-12 col-md-6 form-group">
                     <button type="submit"
-                      className="btn btn-lg btn-default"
+                      className="btn btn-lg btn-primary"
                       onClick={this.fetchWikiData}>
                       Wiki Search
                     </button>
                   </div>
-                  <div className="col-xs-12 col-md-6 form-group">
-                    <a className="btn btn-lg btn-default"
+                  <div className="col-12 col-md-6 form-group">
+                    <a className="btn btn-lg btn-success"
                       rel="noopener noreferrer"
                       href="https://en.wikipedia.org/wiki/Special:Random"
                       target="_blank" >
