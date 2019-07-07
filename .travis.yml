@@ -1,11 +1,11 @@
 language: node_js
 node_js:
   - "10.13.0"
-cache: yarn
+cache: npm
 install:
-  - yarn install    
+  - npm install    
 script:
-  - yarn run build
+  - npm run build
 deploy:
   provider: pages
   skip_cleanup: true
