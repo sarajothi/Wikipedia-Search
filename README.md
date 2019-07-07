@@ -1,5 +1,7 @@
 # Wikipedia Search App
 
+[![Build Status](https://travis-ci.org/abhilashpujari/react-wiki-search.svg?branch=master)](https://travis-ci.org/abhilashpujari/react-wiki-search)
+
 > Simple wikipedia search app in React
 
 ## Demo
