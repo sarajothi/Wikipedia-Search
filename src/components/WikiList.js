@@ -10,7 +10,9 @@ const WikiList = (props) => {
         Object.keys(items).map(key => (
           <div className="rounded overflow-hidden shadow-lg mb-10">
             {
-              items[key].thumbnail && <img className="w-full" src={items[key].thumbnail.source} alt={items[key].title} />
+              items[key].thumbnail && <a rel="noopener noreferrer" href={`https://en.wikipedia.org/?curid=${key}`} target="_blank"> 
+              <img className="w-full" src={items[key].thumbnail.source} alt={items[key].title} />
+              </a>
             }
             
             <div className="px-6 py-4">
