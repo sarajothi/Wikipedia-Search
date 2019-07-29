@@ -21,7 +21,7 @@ const WikiList = (props) => {
                 <a className="text-blue-500 font-bold" rel="noopener noreferrer" href={`https://en.wikipedia.org/?curid=${key}`} target="_blank"> {items[key].title}
                 </a>
               </div>
-              <p className="text-gray-700 text-base">{items[key].extract}</p>
+              <p className="text-gray-700 text-base mb-2">{items[key].extract}</p>
               <a className="text-blue-500 font-bold" rel="noopener noreferrer" href={`https://en.wikipedia.org/?curid=${key}`} target="_blank">
                 Read More...
               </a>
