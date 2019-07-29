@@ -9,20 +9,21 @@ const WikiList = (props) => {
       {
         Object.keys(items).map(key => (
           <div className="rounded overflow-hidden shadow-lg mb-10">
+
             {
-              items[key].thumbnail && <a rel="noopener noreferrer" href={`https://en.wikipedia.org/?curid=${key}`} target="_blank"> 
-              <img className="w-full" src={items[key].thumbnail.source} alt={items[key].title} />
+              items[key].thumbnail && <a rel="noopener noreferrer" href={`https://en.wikipedia.org/?curid=${key}`} target="_blank">
+                <img className="w-full" src={items[key].thumbnail.source} alt={items[key].title} />
               </a>
             }
-            
+
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">
-                <a className="card-title" rel="noopener noreferrer" href={`https://en.wikipedia.org/?curid=${key}`} target="_blank"> {items[key].title}
+                <a className="text-blue-500 font-bold" rel="noopener noreferrer" href={`https://en.wikipedia.org/?curid=${key}`} target="_blank"> {items[key].title}
                 </a>
               </div>
               <p className="text-gray-700 text-base">{items[key].extract}</p>
-              <a className="card-title font-bold" rel="noopener noreferrer" href={`https://en.wikipedia.org/?curid=${key}`} target="_blank"> 
-              Read More...
+              <a className="text-blue-500 font-bold" rel="noopener noreferrer" href={`https://en.wikipedia.org/?curid=${key}`} target="_blank">
+                Read More...
               </a>
             </div>
           </div>
