@@ -12,7 +12,7 @@ const WikiList = (props) => {
 
             {
               items[key].thumbnail && <a rel="noopener noreferrer" href={`https://en.wikipedia.org/?curid=${key}`} target="_blank">
-                <img className="w-full" src={items[key].thumbnail.source} alt={items[key].title} />
+                <img className="w-full max-w-xs m-auto" src={items[key].thumbnail.source} alt={items[key].title} />
               </a>
             }
 
