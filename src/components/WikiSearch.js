@@ -40,38 +40,17 @@ class WikiSearch extends Component {
           <div className="row form-group">
             <div className="col-12 text-center">
               <h3 className="wiki-title">
-                Wiki Search App
+                WikiPedia Search App
               </h3>
             </div>
           </div>
 
-          <form onSubmit={this.fetchWikiData}>
+          <form >
             <div className="row">
               <div className="col-12 form-group">
                 <label htmlFor="search-box" className="sr-only" >Search Text</label>
-                <input id="search-box" placeholder="Search Text..."
+                <input id="search-box" placeholder="Search Text..." onChange={this.fetchWikiData}
                   className="form-control input-lg" required />
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-12 text-center">
-                <div className="row">
-                  <div className="col-xs-12 col-md-6 form-group">
-                    <button type="submit"
-                      className="btn btn-lg btn-primary"
-                      onClick={this.fetchWikiData}>
-                      Wiki Search
-                    </button>
-                  </div>
-                  <div className="col-12 col-md-6 form-group">
-                    <a className="btn btn-lg btn-success"
-                      rel="noopener noreferrer"
-                      href="https://en.wikipedia.org/wiki/Special:Random"
-                      target="_blank" >
-                      Get Random Wiki
-                    </a>
-                  </div>
-                </div>
               </div>
             </div>
           </form>
